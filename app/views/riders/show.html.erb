@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @rider.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @rider.last_name %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @rider.lat %>
+</p>
+
+<p>
+  <strong>Lng:</strong>
+  <%= @rider.lng %>
+</p>
+
+<p>
+  <strong>Quote:</strong>
+  <%= @rider.quote %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @rider.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @rider.city %>
+</p>
+
+<p>
+<%= image_tag url_for(@rider.picture) %>
+</p>
+
+<%= link_to 'Edit', edit_rider_path(@rider) %> |
+<%= link_to 'Back', riders_path %>
