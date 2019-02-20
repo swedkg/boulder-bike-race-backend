@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_17_182236) do
+ActiveRecord::Schema.define(version: 2019_02_19_194153) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_02_17_182236) do
     t.text "slogan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_api_slogans_on_email", unique: true
   end
 
   create_table "riders", force: :cascade do |t|

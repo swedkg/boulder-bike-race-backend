@@ -6,18 +6,23 @@ class Api::SlogansController < ApplicationController
     render json: @slogans, status: :ok
   end
 
+  # TODO: remove validations from here
+  # if not validate send JSON
+
   def create
-    @trace = Api::Slogan.find_by(email: slogan_params[:email])
+    # @trace = Api::Slogan.find_by(email: slogan_params[:email])
     puts "trace: ", @trace
-    if @trace.nil?
+    @new_slogan = Api::Slogan.new(slogan_params)
+    # if @trace.nil?
+    # @new_slogan = Api::Slogan.new(slogan_params)
+    if @new_slogan.save
       puts "not found, write to db"
-      @new_slogan = Api::Slogan.new(slogan_params)
-      if @new_slogan.save
-        head (:created)
-      end
+      head (:created)
+      # end
     else
       puts "already there, send error message"
-      head(:ok)
+      render json: @new_slogan.errors.messages, status: :ok
+      # head(:ok)
     end
   end
 
