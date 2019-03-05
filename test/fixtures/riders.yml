@@ -1,16 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  lat: 1.5
-  lng: 1.5
-  quote: MyText
-  state: MyString
-  city: MyString
-
-two:
-  first_name: MyString
+  first_name: 'John'
   last_name: MyString
   lat: 1.5
   lng: 1.5

@@ -1,0 +1,5 @@
+one:
+  name: 'picture'
+  record_type: 'User'
+  record_id: 1
+  blob_id: 1
