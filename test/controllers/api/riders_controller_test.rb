@@ -11,7 +11,7 @@ class Api::RidersControllerTest < ActionDispatch::IntegrationTest
     get riders_url
 
     response = json_response[0]
-    puts response
+    # puts response
 
     assert_equal "John", response["first_name"]
     assert_equal "MyString", response["last_name"]

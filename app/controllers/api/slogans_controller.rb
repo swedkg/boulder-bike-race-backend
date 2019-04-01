@@ -11,16 +11,19 @@ class Api::SlogansController < ApplicationController
 
   def create
     # @trace = Api::Slogan.find_by(email: slogan_params[:email])
-    puts "trace: ", @trace
+    # puts "trace: ", @trace
     @new_slogan = Api::Slogan.new(slogan_params)
     # if @trace.nil?
     # @new_slogan = Api::Slogan.new(slogan_params)
     if @new_slogan.save
-      puts "not found, write to db"
+      # puts "not found, write to db"
       head (:created)
       # end
     else
-      puts "already there, send error message"
+      # puts "already there, send error message"
+
+      # puts slogan_params
+      # puts @new_slogan.errors.messages
       render json: @new_slogan.errors.messages, status: :ok
       # head(:ok)
     end
